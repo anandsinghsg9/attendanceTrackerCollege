@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Attendance Tracker</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="root">
+        <div class="top-strip">
+            <div class="top-strip-left">
+                <span>📞 Call us : 0120-4806824</span>
+                <span>✉️ E-mail : support.lms@galgotiasuniversity.edu.in</span>
+            </div>
+            <div class="top-strip-right">
+                <a href="#">Log in</a>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="header-left">
+                <div class="logo-placeholder">G</div>
+                <h1 class="university-name">
+                    GALGOTIAS
+                    <span>UNIVERSITY</span>
+                </h1>
+                <div class="app-name">Attendance Tracker</div>
+            </div>
+            <div class="header-right">
+                <a href="#" class="nav-link">Home</a>
+                <div class="profile-circle">?</div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-overlay-box">
+                <h2 class="hero-title">Attendance Tracker</h2>
+                <p class="hero-subtitle">Student Centric Active Learning Ecosystem. Monitor your academic progress and never miss a target.</p>
+                <button class="btn-primary" id="btn-view-dashboard">
+                    View Dashboard
+                    <span style="margin-left: 8px; font-size: 1.2rem;">›</span>
+                </button>
+            </div>
+        </section>
+
+        <div id="dashboard-section" class="dashboard-container">
+            <div class="dashboard-main">
+                <div class="card">
+                    <div class="card-header">
+                        📊 Calculator
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                        <div class="input-group">
+                            <label>Total Classes Conducted</label>
+                            <input
+                                type="number"
+                                id="input-total"
+                                value="50"
+                                min="1"
+                            />
+                        </div>
+                        <div class="input-group">
+                            <label>Classes Attended</label>
+                            <input
+                                type="number"
+                                id="input-attended"
+                                value="35"
+                                min="0"
+                            />
+                        </div>
+                        <div class="input-group">
+                            <label>Target Percentage (%)</label>
+                            <input
+                                type="number"
+                                id="input-needed"
+                                value="75"
+                                min="1" max="100"
+                            />
+                        </div>
+                    </div>
+
+                    <div id="result-card" class="result-card">
+                        <div style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">
+                            Current Overall Attendance
+                        </div>
+                        <div id="stat-value" class="stat-value">
+                            0%
+                        </div>
+
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill" style="width: 0%; background-color: var(--success-color);"></div>
+                        </div>
+
+                        <div id="stat-message" style="margin-top: 1rem; font-weight: 500;">
+                            Message here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">📈 Semester Analytics</div>
+                    <div style="height: 250px; display: flex; align-items: center; justify-content: center; background: #fff; padding: 10px;">
+                        <canvas id="analyticsChart" style="width: 100%; height: 100%;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-sidebar">
+                <div class="card">
+                    <div class="card-header">📚 Subject List</div>
+                    <ul class="subject-list">
+                        <li class="subject-item">
+                            <span class="subject-name">DSA</span>
+                            <span class="subject-attendance" style="color: #10b981;">82%</span>
+                        </li>
+                        <li class="subject-item">
+                            <span class="subject-name">Operating Systems</span>
+                            <span class="subject-attendance" style="color: #f59e0b;">71%</span>
+                        </li>
+                        <li class="subject-item">
+                            <span class="subject-name">Computer Networks</span>
+                            <span class="subject-attendance" style="color: #10b981;">90%</span>
+                        </li>
+                        <li class="subject-item">
+                            <span class="subject-name">Software Engineering</span>
+                            <span class="subject-attendance" style="color: #ef4444;">65%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- JS Modules -->
+    <script src="js/attendance.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
